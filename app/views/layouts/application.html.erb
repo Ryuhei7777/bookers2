@@ -1,16 +1,59 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookers2</title>
+    <title>Bookers</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header class="mw-100,w-50 p-3" style="background-color: #333333;">
+
+      <span class="nav">
+          <%= link_to "Bookers", root_path, class: 'nav-link text-white' %>
+      </span>
+
+      <ul class="nav justify-content-end">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: 'nav-link text-white' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Users", user_path, class: 'nav-link text-white' %>
+        </li>
+         <li class="nav-item">
+          <%= link_to "Books", book_path, class: 'nav-link text-white' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
+        </li>
+
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: 'nav-link text-white' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "About", about_path, class: 'nav-link text-white' %>
+        </li>
+         <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-white' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log in", new_user_session_path, class: 'nav-link text-white' %>
+        </li>
+      <% end %>
+      </ui>
+
+    </header>
     <%= yield %>
   </body>
+
+  <footer>
+    <P>CopyRight Infratop.inc</P>
+  </footer>
 </html>
