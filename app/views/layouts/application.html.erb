@@ -12,48 +12,57 @@
   </head>
 
   <body>
-    <header class="mw-100,w-50 p-3" style="background-color: #333333;">
+    <%# ヘッダー%>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
 
-      <span class="nav">
-          <%= link_to "Bookers", root_path, class: 'nav-link text-white' %>
-      </span>
+      <div class="navbar-brand col-mp-3 ">
+        <%= link_to "Bookers", root_path, class: 'nav-link text-white' %>
+      </div>
 
-      <ul class="nav justify-content-end">
-      <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to "Home", root_path, class: 'nav-link text-white' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Users", user_path, class: 'nav-link text-white' %>
-        </li>
-         <li class="nav-item">
-          <%= link_to "Books", book_path, class: 'nav-link text-white' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
-        </li>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Home", root_path, class: 'nav-link text-white' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "About", about_path, class: 'nav-link text-white' %>
-        </li>
-         <li class="nav-item">
-          <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-white' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Log in", new_user_session_path, class: 'nav-link text-white' %>
-        </li>
-      <% end %>
-      </ui>
+      <div class="collapse navbar-collapse col-md-5 ml-auto" id="navbarSupportedContent">
+        <ul class="nav float-light test-box ">
+          <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Home", root_path, class: 'nav-link text-white' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Users", user_path, class: 'nav-link text-white' %>
+          </li>
+           <li class="nav-item">
+            <%= link_to "Books", book_path, class: 'nav-link text-white' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
+          </li>
 
-    </header>
+          <% else %>
+          <li class="nav-item">
+            <%= link_to "Home", root_path, class: 'nav-link text-white' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "About", about_path, class: 'nav-link text-white' %>
+          </li>
+           <li class="nav-item">
+            <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-white' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Log in", new_user_session_path, class: 'nav-link text-white' %>
+          </li>
+          <% end %>
+        </ui>
+      </div>
+    </nav>
+    <%# 各ページ表示%>
     <%= yield %>
   </body>
-
-  <footer>
-    <P>CopyRight Infratop.inc</P>
-  </footer>
+  
+<%#　フッターレイアウト%>
+  <div class="mt-5">
+    <P class="text-center">CopyRight Infratop.inc</P>
+  </div>
+  
 </html>
