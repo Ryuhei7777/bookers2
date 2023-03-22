@@ -6,9 +6,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+    <script src="https://kit.fontawesome.com/0a8cfa57a2.js" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
@@ -57,12 +58,15 @@
       </div>
     </nav>
     <%# 各ページ表示%>
-    <%= yield %>
+    <div >
+      <%= yield %>
+    </div>
+
   </body>
-  
+
 <%#　フッターレイアウト%>
   <div class="mt-5">
     <P class="text-center">CopyRight Infratop.inc</P>
   </div>
-  
+
 </html>
