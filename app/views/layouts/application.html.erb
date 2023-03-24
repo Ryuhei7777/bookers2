@@ -28,30 +28,60 @@
         <ul class="nav float-light test-box ">
           <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Home", root_path, class: 'nav-link text-white' %>
+            <%= link_to root_path, class: 'nav-link text-white' do %>
+              <i class="fas fa-home" style="color: #ffffff;"></i>
+              <span>Home</span>
+            <% end %>
           </li>
+
           <li class="nav-item">
-            <%= link_to "Users", user_path, class: 'nav-link text-white' %>
+            <%= link_to users_path, class: 'nav-link text-white' do%>
+              <i class="fa-solid fa-users" style="color: #ffffff;"></i>
+              <span>Users</span>
+            <% end %>
           </li>
+
            <li class="nav-item">
-            <%= link_to "Books", book_path, class: 'nav-link text-white' %>
+            <%= link_to books_path, class: 'nav-link text-white' do%>
+              <i class="fa-solid fa-book-open" style="color: #ffffff;"></i>
+              <span>Books</span>
+            <% end %>
           </li>
+
           <li class="nav-item">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
+            <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-white' do%>
+            <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
+            <span>Log out</span>
+            <% end %>
           </li>
 
           <% else %>
           <li class="nav-item">
-            <%= link_to "Home", root_path, class: 'nav-link text-white' %>
+            <%= link_to root_path, class: 'nav-link text-white' do %>
+              <i class="fas fa-home" style="color: #ffffff;"></i>
+              <span>Home</span>
+            <% end %>
           </li>
+
           <li class="nav-item">
-            <%= link_to "About", about_path, class: 'nav-link text-white' %>
+            <%= link_to about_path, class: 'nav-link text-white' do%>
+              <i class="fa-solid fa-link fa-rotate-180" style="color: #ffffff;"></i>
+              <span>About</span>
+            <% end %>
           </li>
+
            <li class="nav-item">
-            <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-white' %>
+            <%= link_to new_user_registration_path, class: 'nav-link text-white' do%>
+              <i class="fa-solid fa-user-plus" style="color: #ffffff;"></i>
+              <span>Sign up</span>
+            <% end %>
           </li>
+
           <li class="nav-item">
-            <%= link_to "Log in", new_user_session_path, class: 'nav-link text-white' %>
+            <%= link_to new_user_session_path, class: 'nav-link text-white' do%>
+              <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i>
+              <span>Log in</span>
+            <% end %>
           </li>
           <% end %>
         </ui>
