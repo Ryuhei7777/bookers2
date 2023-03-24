@@ -1,10 +1,23 @@
 <h2>User info</h2>
 <%= image_tag @user.get_profile_image(200,200) %>
 
-<table>
-  <th>
-
-  </th>
+<table class="w-25 mb-5">
+  <tr class="border-top border-dark">
+    <th class="p-3">name</th>
+    <th class="p-3"><%= @user.name %></th>
+  </tr>
+  <tr class="border-top border-dark">
+    <th class="p-3">introduction</th>
+  </tr>
 </table>
 
-<%= @user.name %>
+<div>
+  <%= link_to edit_user_path(@user.id),class: "btn btn-light btn btn-outline-dark w-25" , method: :get do%>
+    <i class="fa-solid fa-user-gear"></i>
+  <% end %>
+</div>
+
+
+
+
+
