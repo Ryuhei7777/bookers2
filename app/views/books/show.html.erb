@@ -1,2 +1,22 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <!-- ここから -->
+    <%= render 'list', user: @user ,book: @book%>
+        <!-- ここまで -->
+    </div>
+
+    <div class="col-8">
+      <h1>Book detail</h1>
+      <table class="table">
+        <tr class="border-top style:border-light">
+          <td style="width: 15%"><%= image_tag @books.user.get_profile_image(100,100)%>
+            <span class="text-break"><%= link_to @books.user.name,user_path(@books.user_id)%></span>
+          </td>
+          <td class="text-break" style="width: 35%"><%= link_to @books.title,book_path(@books) %></td>
+          <td class="text-break" style="width: 50%"><%= @books.body %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
