@@ -8,6 +8,19 @@
 
     <div class="col-8">
       <h1>Book detail</h1>
+      <% if @books.user == current_user %>
+      <table class="table">
+        <tr class="border-top style:border-light">
+          <td style="width: 15%"><%= image_tag @books.user.get_profile_image(100,100)%>
+            <span class="text-break"><%= link_to @books.user.name,user_path(@books.user_id)%></span>
+          </td>
+          <td class="text-break" style="width: 35%"><%= link_to @books.title,book_path(@books) %></td>
+          <td class="text-break" style="width: 50%"><%= @books.body %></td>
+          <td><%= link_to "Edit",edit_book_path(@books),class:"btn btn-success w-100 text-light" %></td>
+          <td><%= link_to "Destroy", book_path(@books), method: :delete,"data-confirm" => "本当に消しますか？" ,class:"btn btn-danger w-100 text-light" %></td>
+        </tr>
+      </table>
+      <% else %>
       <table class="table">
         <tr class="border-top style:border-light">
           <td style="width: 15%"><%= image_tag @books.user.get_profile_image(100,100)%>
@@ -17,6 +30,7 @@
           <td class="text-break" style="width: 50%"><%= @books.body %></td>
         </tr>
       </table>
+      <% end %>
     </div>
   </div>
 </div>

@@ -7,12 +7,18 @@ class BooksController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @user = Book.find(params[:id]).user
     @book = Book.new
     @books = Book.find(params[:id])
   end
 
   def edit
+  end
+
+  def destroy
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to books_path
   end
 
    # 投稿データの保存
