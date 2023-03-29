@@ -28,7 +28,7 @@
         <ul class="nav float-light test-box ">
           <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to root_path, class: 'nav-link text-white' do %>
+            <%= link_to user_path(current_user.id), class: 'nav-link text-white' do %>
               <i class="fas fa-home" style="color: #ffffff;"></i>
               <span>Home</span>
             <% end %>
