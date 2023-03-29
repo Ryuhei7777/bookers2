@@ -20,12 +20,12 @@
         <%= link_to "Bookers", root_path, class: 'nav-link text-white' %>
       </div>
 
-      <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse col-md-5 ml-auto" id="navbarSupportedContent">
-        <ul class="nav float-light test-box ">
+      <div class="collapse navbar-collapse  " id="navbarNavDropdown">
+        <ul class="navbar-nav col-md-5 ml-auto ">
           <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to user_path(current_user.id), class: 'nav-link text-white' do %>
@@ -36,21 +36,21 @@
 
           <li class="nav-item">
             <%= link_to users_path, class: 'nav-link text-white' do%>
-              <i class="fa-solid fa-users" style="color: #ffffff;"></i>
+              <i class="fas fa-users" style="color: #ffffff;"></i>
               <span>Users</span>
             <% end %>
           </li>
 
            <li class="nav-item">
             <%= link_to books_path, class: 'nav-link text-white' do%>
-              <i class="fa-solid fa-book-open" style="color: #ffffff;"></i>
+              <i class="fas fa-book-open" style="color: #ffffff;"></i>
               <span>Books</span>
             <% end %>
           </li>
 
           <li class="nav-item">
             <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-white' do%>
-            <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>
+            <i class="fas fa-sign-out-alt" style="color: #ffffff;"></i>
             <span>Log out</span>
             <% end %>
           </li>
@@ -65,21 +65,21 @@
 
           <li class="nav-item">
             <%= link_to about_path, class: 'nav-link text-white' do%>
-              <i class="fa-solid fa-link fa-rotate-180" style="color: #ffffff;"></i>
+              <i class="fas fa-link" style="color: #ffffff;"></i>
               <span>About</span>
             <% end %>
           </li>
 
            <li class="nav-item">
             <%= link_to new_user_registration_path, class: 'nav-link text-white' do%>
-              <i class="fa-solid fa-user-plus" style="color: #ffffff;"></i>
+              <i class="fas fa-user-plus" style="color: #ffffff;"></i>
               <span>Sign up</span>
             <% end %>
           </li>
 
           <li class="nav-item">
             <%= link_to new_user_session_path, class: 'nav-link text-white' do%>
-              <i class="fa-solid fa-right-to-bracket" style="color: #ffffff;"></i>
+              <i class="fas fa-sign-in-alt" style="color: #ffffff;"></i>
               <span>Log in</span>
             <% end %>
           </li>
