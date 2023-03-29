@@ -1,13 +1,13 @@
 <div> <%= flash[:notice] %></div>
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col-md-3">
       <!-- ここから -->
     <%= render 'list', user: @user ,book: @book%>
         <!-- ここまで -->
     </div>
 
-    <div class="col-8">
+    <div class="col-md-8 offset-md-1">
       <h1>Book detail</h1>
       <% if @books.user == current_user %>
       <table class="table">
